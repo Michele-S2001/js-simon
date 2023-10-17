@@ -7,7 +7,6 @@ for (let i = 0; i < randomFiveNumbers.length; i++) {
   alertNumbers += randomFiveNumbers[i] + " ";
 }
 
-console.log(alertNumbers);
 alert("memorizza i seguenti numeri: " + alertNumbers);
 
 setTimeout(() => {
@@ -31,7 +30,7 @@ setTimeout(() => {
 
   alert(`Hai indovinato ${index} numero/i, e sono: ${guessedNumbersToString}`);
   
-}, 10000)
+}, 30000)
 
 
 
