@@ -8,21 +8,19 @@ alert("memorizza i seguenti numeri: " + alertNumbers);
 
 setTimeout(() => {
   
-  let index = 0;
   let guessedNumbers = [];
 
   for (let i = 0; i < 5; i++) {
     const currentNumber = parseInt(prompt('Inserire un numero: '));
     // confronto ogni numero
     if (randomFiveNumbers.includes(currentNumber)) {
-      index++;
       guessedNumbers.push(currentNumber);
     }
   }
   
   const guessedNumbersToString = getStringArray(guessedNumbers);
 
-  alert(`Hai indovinato ${index} numero/i, e sono: ${guessedNumbersToString}`);
+  alert(`Hai indovinato ${guessedNumbers.length} numero/i, e sono: ${guessedNumbersToString}`);
   
 }, 30000)
 
