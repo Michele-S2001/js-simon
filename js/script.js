@@ -1,11 +1,8 @@
 //generare 5 numeri casuali e racchiuderli in un array
 const randomFiveNumbers = getArrayOfRandomIntBetween(1, 100, 5);
 
-let alertNumbers = '';
-// Visualizzare in pagina 5 numeri casuali
-for (let i = 0; i < randomFiveNumbers.length; i++) {
-  alertNumbers += randomFiveNumbers[i] + " ";
-}
+//converto l'array di numeri generati in una stringa
+const alertNumbers = getStringArray(randomFiveNumbers);
 
 alert("memorizza i seguenti numeri: " + alertNumbers);
 
@@ -22,18 +19,21 @@ setTimeout(() => {
       guessedNumbers.push(currentNumber);
     }
   }
-
-  let guessedNumbersToString = '';
-  for (let i = 0; i < guessedNumbers.length; i++) {
-    guessedNumbersToString += guessedNumbers[i] + " ";
-  }
+  
+  const guessedNumbersToString = getStringArray(guessedNumbers);
 
   alert(`Hai indovinato ${index} numero/i, e sono: ${guessedNumbersToString}`);
   
 }, 30000)
 
-
-
+// funcione per convertire un array in una stringa con dello spazio
+function getStringArray (arrayName) {
+  let stringName = '';
+  for (let i = 0; i < arrayName.length; i++) {
+    stringName += arrayName[i] + " ";
+  }
+  return stringName;
+}
 
 // funzioni per generare n numeri interi in array
 function getArrayOfRandomIntBetween (min, max, arraylength) {
