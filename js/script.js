@@ -10,19 +10,19 @@ setTimeout(() => {
   
   let guessedNumbers = [];
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < randomFiveNumbers.length; i++) {
     const currentNumber = parseInt(prompt('Inserire un numero: '));
     // confronto ogni numero
-    if (randomFiveNumbers.includes(currentNumber)) {
+    if (randomFiveNumbers.includes(currentNumber) && !guessedNumbers.includes(currentNumber) && !isNaN(currentNumber)) {
       guessedNumbers.push(currentNumber);
     }
   }
-  
+  console.log(guessedNumbers);
   const guessedNumbersToString = getStringArray(guessedNumbers);
 
   alert(`Hai indovinato ${guessedNumbers.length} numero/i, e sono: ${guessedNumbersToString}`);
   
-}, 30000)
+}, 3000)
 
 // funcione per convertire un array in una stringa con dello spazio
 function getStringArray (arrayName) {
